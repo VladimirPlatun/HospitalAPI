@@ -1,0 +1,54 @@
+version: '3.8'
+services:
+  api:
+    container_name: hospital_api
+    build:
+      context: . 
+      dockerfile: ./HospitalAPI/Dockerfile 
+    ports:
+      - "5000:80"  # HTTP
+      - "5001:443" # HTTPS
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Production
+      - ConnectionStrings__DefaultConnection=Server=sql_server,1433;Database=HospitalDB;User Id=sa;Password=YourPassword123;TrustServerCertificate=True;MultipleActiveResultSets=true;
+    networks:
+      - hospital_network
+    depends_on:
+      - sql_server
+
+  sql_server:
+    image: mcr.microsoft.com/mssql/server:2019-latest
+    container_name: sql_server
+    environment:
+      - ACCEPT_EULA=Y
+      - SA_PASSWORD=YourPassword123
+    ports:
+      - "1433:1433"
+    volumes:
+      - sql_data:/var/opt/mssql
+    networks:
+      - hospital_network
+    healthcheck:
+      test: ["CMD", "/opt/mssql-tools/bin/sqlcmd", "-S", "localhost", "-U", "sa", "-P", "YourPassword123", "-Q", "SELECT 1"]
+      interval: 10s
+      retries: 10
+
+  console_app:
+    container_name: hospital_console
+    build:
+      context: . 
+      dockerfile: ./ConsoleAppHospital/Dockerfile 
+    depends_on:
+      - api
+      - sql_server  
+    environment:
+      - API_URL=http://hospital_api:80/api/Patients  # URL для API
+    networks:
+      - hospital_network
+
+volumes:
+  sql_data:
+
+networks:
+  hospital_network:
+    driver: bridge

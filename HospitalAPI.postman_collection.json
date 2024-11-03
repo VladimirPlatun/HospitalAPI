@@ -1,0 +1,177 @@
+{
+	"info": {
+		"_postman_id": "07b1262d-26b6-4721-8e38-3039946ba2a8",
+		"name": "HospitalAPI",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "24189849"
+	},
+	"item": [
+		{
+			"name": "/api/Patients",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		},
+		{
+			"name": "/api/Patients",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{ \"name\": { \"useO\": \"official\", \"family\": \"Doe\", \"firstName\": \"John\", \"patronymic\": \"Johnovich\" }, \"gender\": 0, \"birthDate\": \"2024-10-31T14:29:30.640Z\", \"active\": true }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "https://localhost:5001/api/Patients"
+			},
+			"response": []
+		},
+		{
+			"name": "/api/Patients",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		},
+		{
+			"name": "/api/Patients",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		},
+		{
+			"name": "/api/Patients",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": "https://localhost:5001/api/Patients/356705eb-511e-42eb-b0d6-02ad25bf29b7"
+			},
+			"response": []
+		},
+		{
+			"name": "api/Patients/search",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		},
+		{
+			"name": "api/Patients/search",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://localhost:5001/api/Patients/search?birthDate=lt2019-08-30",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "5001",
+					"path": [
+						"api",
+						"Patients",
+						"search"
+					],
+					"query": [
+						{
+							"key": "birthDate",
+							"value": "lt2019-08-30"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "api/Patients/search",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://localhost:5001/api/Patients/search?birthDate=gt2019-08-30",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "5001",
+					"path": [
+						"api",
+						"Patients",
+						"search"
+					],
+					"query": [
+						{
+							"key": "birthDate",
+							"value": "gt2019-08-30"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "api/Patients/search",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://localhost:5001/api/Patients/search?birthDate=ne2020-01-15",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "5001",
+					"path": [
+						"api",
+						"Patients",
+						"search"
+					],
+					"query": [
+						{
+							"key": "birthDate",
+							"value": "ne2020-01-15"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "api/Patients/search",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://localhost:5001/api/Patients/search?birthDate=le2020-01-15",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "5001",
+					"path": [
+						"api",
+						"Patients",
+						"search"
+					],
+					"query": [
+						{
+							"key": "birthDate",
+							"value": "le2020-01-15"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
