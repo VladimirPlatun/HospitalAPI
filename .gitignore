@@ -1,52 +1,59 @@
-# Prerequisites
-*.d
 
-# Object files
-*.o
-*.ko
-*.obj
-*.elf
+[Dd]ebug/
+[Rr]elease/
+.vscode/
+.idea/
+*.user
+*.rsuser
+*.suo
+*.userosscache
+*.sln.docstates
 
-# Linker output
-*.ilk
-*.map
-*.exp
 
-# Precompiled Headers
-*.gch
-*.pch
+*.DS_Store
+*.directory
+Thumbs.db
+*.log
+*.swp
+*.sln*
+*.vs/
 
-# Libraries
-*.lib
-*.a
-*.la
-*.lo
+bin/
+obj/
 
-# Shared objects (inc. Windows DLLs)
-*.dll
-*.so
-*.so.*
-*.dylib
+*.log
+.vscode
+*.vs
+*.ncrunchproject
+*.ncrunchsolution
 
-# Executables
-*.exe
-*.out
-*.app
-*.i*86
-*.x86_64
-*.hex
+TestResults/
+coverage/
 
-# Debug files
-*.dSYM/
-*.su
-*.idb
-*.pdb
+appsettings.*.json
+appsettings.json
+.env
+.env.*
 
-# Kernel Module Compile Results
-*.mod*
-*.cmd
-.tmp_versions/
-modules.order
-Module.symvers
-Mkfile.old
-dkms.conf
+*.dbmdl
+*.dbproj.schemaview
+*.jfm
+
+.nuget/
+*.nupkg
+
+# Локальные nuget-пакеты
+*.snupkg
+*.localhistory/
+*.orig
+
+.idea/
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+**/*.psess
+
+Generated/
+
+secrets.json
